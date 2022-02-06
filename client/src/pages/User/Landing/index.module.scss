@@ -1,0 +1,11 @@
+@import '../../../styles/base';
+
+.container {
+  .wraper {
+  }
+  .jumbotron {
+    width: 80%;
+    @include content-center;
+    margin-top: 5%;
+  }
+}

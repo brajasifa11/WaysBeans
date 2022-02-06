@@ -1,0 +1,129 @@
+@import '../../../styles/base';
+
+.container {
+  @include main;
+  .wraper {
+    .content {
+      margin-top: 5%;
+      width: 80%;
+      @include content-center;
+      .title {
+        @include directionX;
+        justify-content: space-between;
+        font-size: 24px;
+        color: $color-brown;
+        font-weight: bold;
+        .sectionProfile {
+          width: 50%;
+          text-align: left;
+        }
+        .senctionhistory {
+          width: 50%;
+          text-align: left;
+        }
+      }
+      .body {
+        width: 100%;
+        @include directionX;
+        justify-content: space-between;
+        .leftSection {
+          margin-top: 3%;
+          width: 50%;
+          .profile {
+            @include directionX;
+            flex-wrap: wrap;
+            .avatar {
+              width: 180px;
+              height: 222px;
+            }
+            .infoWraper {
+              margin-left: 5%;
+              font-size: 18px;
+              .nameWraper {
+                margin-bottom: 20%;
+                .fullname {
+                  color: $color-brown;
+                  margin-bottom: 5%;
+                }
+              }
+              .emailWraper {
+                .email {
+                  color: $color-brown;
+                  margin-bottom: 5%;
+                }
+              }
+            }
+          }
+        }
+        .rightSection {
+          margin-top: 3%;
+          width: 50%;
+          height: 355px;
+          overflow-y: scroll;
+          .historyContainer {
+            margin-bottom: 2%;
+            @include directionX;
+            justify-content: space-between;
+            // border: 1px solid $color-brown;
+            background-color: $color-light-pink;
+            .history {
+              width: 70%;
+              @include directionX;
+              img {
+                padding: 4%;
+                width: 100px;
+                height: 140px;
+              }
+              .detailed {
+                width: 100%;
+                margin-left: 4%;
+                .productName {
+                  margin-top: 5%;
+                  font-size: 20px;
+                  color: $color-brown;
+                  font-weight: bold;
+                  margin-bottom: 2%;
+                }
+                .date {
+                  font-size: 14px;
+                  color: $color-brown;
+                  margin-bottom: 10%;
+                }
+                .subdetailed {
+                  font-size: 15px;
+                  color: $color-sub-brown;
+                  margin-top: 2%;
+                }
+                .subtotal {
+                  font-size: 15px;
+                  color: $color-sub-brown;
+                  font-weight: bold;
+                  margin-top: 8%;
+                }
+              }
+            }
+            .statusWraper {
+              @include directionY;
+              align-items: center;
+              width: 30%;
+              .logo {
+                margin-top: 10%;
+                width: 140px;
+              }
+              .barcode {
+                margin-top: 8%;
+                width: 50px;
+              }
+              .status {
+                margin-top: 8%;
+              }
+            }
+          }
+        }
+        .rightSection::-webkit-scrollbar {
+            display: none;
+          }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+//font
+@font-face {
+  font-family: "avenir";
+  src: url("../static/fonts/AvenirLTStd-Book.otf");
+}
+@font-face {
+  font-family: "product-sans";
+  src: url("../static//fonts/Product\Sans\Regular.ttf");
+}
+@font-face {
+  font-family: "inter";
+  src: url("../static/fonts/Inter-Regular.ttf");
+}
+@mixin main {
+  font-family: "avenir";
+}
+@mixin submain {
+  font-family: "product-sans";
+}
+@mixin inter {
+  font-family: "inter";
+}
+//position
+@mixin directionX {
+  display: flex;
+  flex-direction: row;
+}
+@mixin directionY {
+  display: flex;
+  flex-direction: column;
+}
+@mixin content-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+@mixin items-center {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 2%;
+}

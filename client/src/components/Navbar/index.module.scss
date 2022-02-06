@@ -1,0 +1,207 @@
+@import '../../styles/base';
+
+.container {
+  // width: 90%;
+  @include directionX;
+  padding: 25px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-bg-navbar;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+  .logo {
+    margin-left: 4%;
+    cursor: pointer;
+    img {
+      width: 120%;
+    }
+  }
+  .modal {
+    display: flex;
+    gap: 15px;
+    margin-right: 3%;
+    .btnLog {
+      @include submain;
+      font-weight: bold;
+      width: 100px;
+      height: 30px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: 2px solid $color-brown;
+      color: $color-brown;
+    }
+    .btnReg {
+      @include submain;
+      width: 100px;
+      height: 30px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+      color: $color-white;
+      background-color: $color-brown;
+    }
+  }
+  .navigation {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    margin-right: 3%;
+    .subnavigation {
+      .basket {
+        cursor: pointer;
+      }
+      .indicator {
+        @include submain;
+        position: absolute;
+        font-size: 12px;
+        text-align: center;
+        width: 17px;
+        height: 17px;
+        right: 152px;
+        color: $color-white;
+        background-color: $color-lt-red;
+        border-radius: 10px;
+        // border: 1px solid red;
+      }
+    }
+    .avatar {
+      img {
+        display: flex;
+        cursor: pointer;
+      }
+      .dropdownSection {
+        .overlayX {
+          background-color: transparent;
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          .dropdownUserContainer {
+            @include main;
+            width: 210px;
+            position: absolute;
+            font-weight: bold;
+            right: 63px;
+            top: 87px;
+            .outerTriangle {
+              margin-top: 3px;
+              margin-left: 168px;
+              width: 0;
+              height: 0;
+              border-bottom: 14px solid $color-brown;
+              border-left: 14px solid transparent;
+              border-right: 14px solid transparent;
+              .innerTriangle {
+                position: relative;
+                top: 2px;
+                left: -13px;
+                width: 0;
+                height: 0;
+                border-bottom: 13px solid $color-white;
+                border-left: 13px solid transparent;
+                border-right: 13px solid transparent;
+              }
+            }
+            .dropdownWraper {
+              @include directionY;
+              justify-content: center;
+              background-color: $color-white;
+              border: 1px solid $color-brown;
+              border-radius: 10px;
+              .profileWraper {
+                padding: 12px;
+                @include directionX;
+                align-items: center;
+                margin-bottom: 10px;
+                cursor: pointer;
+                .profile {
+                  margin-right: 12px;
+                }
+              }
+              .border {
+                margin-bottom: 8px;
+                border: 1px solid $color-line-popup;
+              }
+              .logoutWraper {
+                margin-left: 4px;
+                padding: 12px;
+                @include directionX;
+                align-items: center;
+                cursor: pointer;
+                .logout {
+                  margin-right: 12px;
+                }
+              }
+            }
+          }
+        }
+        .overlayX {
+          background-color: transparent;
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          .dropdownAdminContainer {
+            @include main;
+            width: 210px;
+            position: absolute;
+            font-weight: bold;
+            right: 63px;
+            top: 87px;
+            .outerTriangle {
+              margin-top: 3px;
+              margin-left: 168px;
+              width: 0;
+              height: 0;
+              border-bottom: 14px solid $color-brown;
+              border-left: 14px solid transparent;
+              border-right: 14px solid transparent;
+              .innerTriangle {
+                position: relative;
+                top: 2px;
+                left: -13px;
+                width: 0;
+                height: 0;
+                border-bottom: 13px solid $color-white;
+                border-left: 13px solid transparent;
+                border-right: 13px solid transparent;
+              }
+            }
+            .dropdownWraper {
+              @include directionY;
+              justify-content: center;
+              background-color: $color-white;
+              border: 1px solid $color-brown;
+              border-radius: 10px;
+              .productWraper {
+                padding: 12px;
+                @include directionX;
+                align-items: center;
+                margin-bottom: 10px;
+                cursor: pointer;
+                .product {
+                  margin-right: 12px;
+                }
+              }
+              .border {
+                margin-bottom: 8px;
+                border: 1px solid $color-line-popup;
+              }
+              .logoutWraper {
+                margin-left: 4px;
+                padding: 12px;
+                @include directionX;
+                align-items: center;
+                cursor: pointer;
+                .logout {
+                  margin-right: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

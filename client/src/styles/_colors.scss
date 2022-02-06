@@ -1,0 +1,50 @@
+/*
+ * Filename: _colors.scss
+ * Purpose: Includes a list of colors that should be used in the application.
+*/
+
+/**************** SASS VARIABLES ***********************/
+// Begin with simple, human-readable color names, which should be stable:
+// DON'T CONSUME THESE IN YOUR CODE!
+
+// Slightly lighten a color
+// @access public
+// @param {Color} $color - color to tint
+// @param {Number} $percentage - percentage of `$color` in returned color
+// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(#fff, $color, $percentage);
+}
+
+// Slightly darken a color
+// @access public
+// @param {Color} $color - color to shade
+// @param {Number} $percentage - percentage of `$color` in returned color
+// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(#000, $color, $percentage);
+}
+
+// Primary colors
+$color-brown: #613D2B;
+$color-sub-brown: #974A4A;
+$color-white: #fff;
+$color-lt-pink: #FF0742;
+$color-lt-red: #F13F3F;
+$color-light-green: #0ACF83;
+$color-bg: #F5F5F5;
+$color-bg-navbar: #F5F5F5;
+$color-bg-product: #F7E6DA;
+$color-dark-overlay: rgba(0, 0, 0, .5);
+$color-light-pink: #F6E6DA;
+$color-bg-form: rgba(97, 61, 43, 0.25);
+$color-text-form: rgba(97, 61, 43, 0.5);
+$color-bg-thead: #E5E5E5;
+$color-border-table: #828282;
+$color-orange: #FF9900;
+$color-forest-green: #78A85A;
+$color-pink-bold: #E83939;
+$color-lt-blue: #00D1FF;
+$color-line-popup: #A8A8A8;
+
+

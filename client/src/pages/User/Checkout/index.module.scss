@@ -1,0 +1,138 @@
+@import '../../../styles/base';
+
+.container {
+  @include main;
+  .wraper {
+    margin-top: 3%;
+    .title {
+      font-size: 24px;
+      font-weight: bolder;
+      color: $color-brown;
+      margin-bottom: 2%;
+      margin-left: 10%;
+    }
+    .content {
+      width: 80%;
+      @include content-center;
+      @include directionX;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      .leftSection {
+        width: 50%;
+        .formWraper {
+          width: 80%;
+          @include directionY;
+          .input {
+            margin-bottom: 5%;
+            height: 30px;
+            border-radius: 5px;
+            border: 2px solid $color-brown;
+            padding-left: 2%;
+            background-color: $color-bg-form;
+          }
+          .input::placeholder {
+            color: $color-text-form;
+          }
+          .inputAddress {
+            background-color: $color-bg-form;
+            height: 100px;
+            border-radius: 5px;
+            border: 2px solid $color-brown;
+          }
+          .inputAddress::placeholder {
+            padding-top: 3%;
+            padding-left: 2%;
+            color: $color-text-form;
+          }
+          .btn {
+            margin-top: 3%;
+              @include directionX;
+              width: 60%;
+              height: 38px;
+              justify-content: center;
+              align-items: center;
+              border-radius: 5px;
+              border: 2px solid $color-brown;
+              background-color: $color-bg-form;
+              color: $color-text-form;
+              cursor: pointer;
+              img {
+                margin-left: 8px;
+                width: 10px;
+              }
+          }
+        }
+      }
+      .rightSection {
+        width: 50%;
+        .historyContainer {
+          @include directionX;
+          justify-content: space-between;
+          border: 1px solid $color-brown;
+          background-color: $color-light-pink;
+          .history {
+            width: 70%;
+            @include directionX;
+            img {
+              padding: 4%;
+              width: 100px;
+              height: 140px;
+            }
+            .detailed {
+              width: 100%;
+              margin-left: 4%;
+              .productName {
+                margin-top: 5%;
+                font-size: 20px;
+                color: $color-brown;
+                font-weight: bold;
+                margin-bottom: 2%;
+              }
+              .date {
+                font-size: 14px;
+                color: $color-brown;
+                margin-bottom: 10%;
+              }
+              .subdetailed {
+                font-size: 15px;
+                color: $color-sub-brown;
+                margin-top: 2%;
+              }
+              .subtotal {
+                font-size: 15px;
+                color: $color-sub-brown;
+                font-weight: bold;
+                margin-top: 8%;
+              }
+            }
+          }
+          .statusWraper {
+            @include directionY;
+            align-items: flex-end;
+            width: 30%;
+            padding-right: 4%;
+            img {
+              margin-top: 10%;
+              width: 140px;
+            }
+            .status {
+              margin-top: 15%;
+            }
+          }
+        }
+        .btn {
+          button {
+            margin-top: 5%;
+            width: 100%;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            color: $color-white;
+            background-color: $color-brown;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

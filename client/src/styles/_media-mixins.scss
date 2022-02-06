@@ -1,0 +1,280 @@
+/*
+ * Filename: _media.scss
+ * Purpose: Includes a list of media query related classes/mixins.
+*/
+
+/****** MIXINS: UTILITIES ******/
+// These mixins should all be reusable, best-practice patterns/utilities
+// that are not specifically customized to the client/app context.
+// (Think of this a bit like the /node_modules, rather than the /src,
+//  but do contribute new generally-useful tools.)
+
+/***** Responsive-Sizing Tools ********/
+/*
+REF: http://stackoverflow.com/questions/18424798/twitter-bootstrap-3-how-to-use-media-queries
+
+USAGE:
+
+.class-block__element--modifier {
+  // general styles here:
+  height: 100px;
+  background-color: #666;
+
+  // size-specific styling:
+  @include apply-at-md-max-size {
+    // insert any CSS rules you only want at this size
+  }
+  @include apply-at-sm-size {
+    // insert any CSS rules you only want at this size
+  }
+}
+*/
+
+/* Responsive CSS Utilities for the Web UI repository */
+
+/* Notes:
+ 1. Web-UI has TWO (2) breakpoints
+ 2. Breakpoint #1 is the maximum screen width for mobile devices
+ 3. Breakpoint #2 is the maximum screen width for tablets (iOS or, Android)
+ 4. Any screen whose width that exceeds Breakpoint #2 is considered a desktop screen (PCs, Yogas, iMacs etc.)
+*/
+
+// Variables
+// SM - Mobile Devices maximum screen width
+// MD - Tablet Screens maximum screen width
+// LG - Large Screens - Desktop screen widths
+
+$screen-xsm-limit: 320px;
+
+$screen-sm-limit: 767px;
+$screen-md-limit: 1023px;
+
+$screen-max-width: 1200px;
+
+$screen-1024-limit: 1024px;
+$screen-1270-limit: 1270px;
+// TODO: Other mixins for Responsiveness should and will be added when needed.
+
+// Mixins - these could consume the variabled defined above
+
+// Following mixins work for only 1 of the 3 screens distinguished above (in the Notes)
+@mixin apply-at-xsm-size {
+  @media (max-width: $screen-xsm-limit) {
+    @content;
+  }
+}
+
+@mixin apply-at-sm-size {
+  @media (max-width: $screen-sm-limit) {
+    @content;
+  }
+}
+
+@mixin apply-at-md-size {
+  @media (min-width: $screen-sm-limit + 1) and (max-width: $screen-md-limit) {
+    @content;
+  }
+}
+
+@mixin apply-at-lg-size {
+  @media (min-width: $screen-md-limit + 1) {
+    @content;
+  }
+}
+
+@mixin apply-at-ipad-size {
+  @media (min-device-width: $screen-sm-limit + 1) and (max-device-width: $screen-1024-limit) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin apply-at-ipad-pro-potrait {
+  @media (min-device-width: 1024px) and (max-device-width: 1024px) and (min-device-height: 1366px) and (max-device-height: 1366px) and (min-width: 1024px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+// Following mixins work for a combination of screen sizes.
+// For example: There could be content that needs to show the same way on both mobile and tablet screens
+
+@mixin apply-at-sm-md-size {
+  @media (max-width: $screen-md-limit) {
+    @content;
+  }
+}
+
+@mixin apply-at-md-lg-size {
+  @media (min-width: $screen-sm-limit + 1) {
+    @content;
+  }
+}
+
+@mixin apply-at-1024-1270-size {
+  @media (min-width: $screen-1024-limit) and (max-width: $screen-1270-limit) {
+    @content;
+  }
+}
+
+/* Make things disappear at certain sizes! */
+
+@mixin disappear-at-sm-size {
+  @include apply-at-sm-size {
+    display: none;
+  }
+}
+
+@mixin disappear-at-sm-md-size {
+  @include apply-at-sm-md-size {
+    display: none;
+  }
+}
+
+@mixin disappear-at-md-size {
+  @include apply-at-md-size {
+    display: none;
+  }
+}
+
+@mixin disappear-at-md-lg-size {
+  @include apply-at-md-lg-size {
+    display: none;
+  }
+}
+
+@mixin disappear-at-lg-size {
+  @include apply-at-lg-size {
+    display: none;
+  }
+}
+
+/* Be a Flexbox row at large sizes, but column at smaller sizes! */
+
+@mixin row-lg-column-sm {
+  @include apply-at-lg-size {
+    flex-direction: row;
+  }
+  @include apply-at-sm-size {
+    flex-direction: column;
+  }
+}
+
+// NORMALIZING INPUT BEHAVIOR:
+@mixin disable-platform-input-styles {
+  // To deal with both Chrome and iOS platform-specific
+  // input styling, particularly on dates
+  -webkit-appearance: none;
+  &::-webkit-inner-spin-button,
+  &::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
+  outline: none;
+  outline-style: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: transparent;
+  // disable the autofill yellow background, which requires trickery
+  // UPDATE: not compatible with our validation backgrounds...
+  // &:-webkit-autofill,
+  // &:-webkit-autofill:hover,
+  // &:-webkit-autofill:focus,
+  // &:-webkit-autofill:active {
+  //   transition: background-color 5000s ease-in-out 0s;
+  // }
+  &:focus {
+    outline: none;
+  }
+  // optional extra item:
+  // &::-webkit-input-placeholder {
+  //     visibility: hidden !important;
+  // }
+}
+
+@mixin button-reset-basic {
+  // remove most default button styling
+  -webkit-appearance: none;
+  /* stylelint-disable property-no-unknown */
+  /* Needed for some lower end andriod devices */
+  -webkit-focus-ring-color: rgba(0, 0, 0, 0);
+  -webkit-focus-ring-color: transparent;
+  -webkit-focus-ring-color: none;
+  /* stylelint-enable property-no-unknown */
+  outline: 0;
+  outline: none;
+  @include disable-tap-highlight;
+}
+
+@mixin button-reset-full {
+  // remove ALL default button styling, even things you may replace
+  @include button-reset-basic;
+  border: none;
+  background-color: transparent;
+}
+
+@mixin paddingless-content($default-padding: 20px) {
+  // USE: where container has default padding, zero it out and fill full width.
+  // We're maintaining standard flow, but bullying the padding with
+  // negative margins.
+  margin: -$default-padding;
+}
+
+@mixin disable-tap-highlight {
+  // This disables highlight blue or grey colors, an OS accessibility behavior
+  // that shows on some android devices
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  /* stylelint-disable property-no-unknown */
+  /* Needed for some lower end andriod devices */
+  -webkit-tap-highlight: none;
+  /* stylelint-enable property-no-unknown */
+}
+
+@mixin set-screen-width {
+  @include apply-at-lg-size {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  @include apply-at-md-size {
+    padding: 0 3rem;
+  }
+
+  @include apply-at-sm-size {
+    padding: 0 2rem;
+  }
+}
+
+@mixin set-screen-width-v2 {
+  @include apply-at-1024-1270-size {
+    max-width: 1270px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  @include apply-at-lg-size {
+    max-width: 1270px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  @include apply-at-md-size {
+    padding: 0 3rem;
+  }
+
+  @include apply-at-sm-size {
+    padding: 0 2rem;
+  }
+}
+
+@mixin set-screen-min-height {
+  @include apply-at-sm-size {
+    min-height: 300px;
+  }
+  @include apply-at-md-size {
+    min-height: 720px;
+  }
+  @include apply-at-lg-size {
+    min-height: 575px;
+  }
+}

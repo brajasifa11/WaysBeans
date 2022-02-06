@@ -1,0 +1,139 @@
+@import '../../../styles/base';
+
+.container {
+  @include main;
+  .wraper {
+    margin-top: 5%;
+    .content {
+      @include items-center;
+      padding-bottom: 5%;
+      .title {
+        font-size: 24px;
+        font-weight: bolder;
+        color: $color-brown;
+        margin-bottom: 2%;
+      }
+      .reviewOrder {
+        font-size: 18px;
+        color: $color-brown;
+      }
+      .orders {
+        @include directionX;
+        justify-content: space-between;
+        margin-top: 2%;
+        .orderWraper {
+          width: 70%;
+          @include directionY;
+          border-top: 1px solid $color-brown;
+          border-bottom: 1px solid $color-brown;
+          .order {
+            @include directionX;
+            padding-top: 4%;
+            padding-bottom: 4%;
+            align-items: center;
+            border-bottom: 1px solid $color-brown;
+            .imageWraper {
+              margin-right: 2%;
+              img {
+                width: 80px;
+              }
+            }
+            .items {
+              width: 100%;
+              .package {
+                @include directionX;
+                justify-content: space-between;
+                .products {
+                  color: $color-brown;
+                  font-weight: bold;
+                }
+                .price {
+                  color: $color-brown;
+                }
+              }
+              .approx {
+                @include directionX;
+                justify-content: space-between;
+                margin-top: 40px;
+                img {
+                  width: 28px;
+                  height: 28px;
+                }
+                .amount {
+                  width: 14%;
+                  @include directionX;
+                  justify-content: space-between;
+                  align-items: center;
+                  p {
+                    color: $color-brown;
+                    background-color: $color-light-pink;
+                    padding: 2px 12px;
+                    border-radius: 5px;
+                  }
+                  span {
+                    cursor: pointer;
+                    font-weight: bolder;
+                    color: $color-brown;
+                  }
+                }
+                .bin {
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+          .order:nth-last-child(1) {
+          border: none;
+          }
+        }
+        .total {
+          font-size: 16px;
+          width: 27%;
+          max-height: 270px;
+          p {
+            padding: 14px 0px;
+            color: $color-brown;
+          }
+          .totalWraper {
+            min-height: 145px;
+            .subTotal {
+              @include directionX;
+              justify-content: space-between;
+              border-top: 1px solid $color-brown;
+              .description {
+                text-align: left;
+              }
+              .value {
+                text-align: right;
+              }
+            }
+            .subTotal:nth-last-child(1) {
+            border: none;
+            border-top: 1px solid $color-brown;
+            border-bottom: 1px solid $color-brown;
+            }
+          }
+          .submission {
+            @include directionX;
+            justify-content: space-between;
+            font-weight: bold;
+          }
+          button {
+            width: 260px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            margin-left: 6%;
+            margin-top: 19%;
+            border-radius: 5px;
+            color: $color-white;
+            background-color: $color-brown;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

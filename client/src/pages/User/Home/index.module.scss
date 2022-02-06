@@ -1,0 +1,50 @@
+@import '../../../styles/base';
+
+.container {
+  .wraper {
+    .jumbotron {
+      width: 80%;
+      @include content-center;
+      margin-top: 5%;
+    }
+    .displays {
+      width: 83%;
+      margin-top: 5%;
+      padding-bottom: 9%;
+      @include content-center;
+      @include directionX;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      .card {
+        @include main;
+        margin-bottom: 5%;
+        @include directionY;
+        img {
+          cursor: pointer;
+        }
+        .description {
+          padding-left: 9%;
+          text-align: left;
+          background-color: $color-bg-product;
+          .title {
+            color: $color-brown;
+            font-size: 18px;
+            margin-top: 7%;
+          }
+          .subtitle {
+            color: $color-sub-brown;
+            @include directionY;
+            column-gap: 5%;
+            color: $color-sub-brown;
+            font-size: 14px;
+            padding-top: 5%;
+            padding-bottom: 3%;
+            .price {
+              margin-bottom: 3%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

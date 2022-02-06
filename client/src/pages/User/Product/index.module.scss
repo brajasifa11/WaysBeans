@@ -1,0 +1,54 @@
+@import '../../../styles/base';
+
+.container {
+  .wraper {
+    .content {
+      width: 67%;
+      @include directionX;
+      @include content-center;
+      margin-top: 5%;
+      .product {
+        img {
+          width: 300px;
+        }
+      }
+      .description {
+        @include directionY;
+        flex-wrap: wrap;
+        margin-left: 5%;
+        padding: 2% 0%;
+        .title {
+          color: $color-brown;
+          font-size: 48px;
+          margin-bottom: 2%;
+          .stock {
+            color: $color-sub-brown;
+            font-size: 18px;
+          }
+        }
+        .subdescription {
+          font-size: 18px;
+          margin-bottom: 5%;
+        }
+        .price {
+          display: flex;
+          font-size: 24px;
+          color: $color-sub-brown;
+          margin-left: 70%;
+        }
+        .response {
+          margin-top: 5%;
+          @include directionX;
+          button {
+            width: 100%;
+            height: 40px;
+            color: $color-white;
+            background-color: $color-brown;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

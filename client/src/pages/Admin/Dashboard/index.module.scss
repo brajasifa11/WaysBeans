@@ -1,0 +1,72 @@
+@import '../../../styles/base';
+
+.container {
+  .wraper {
+    width: 80%;
+    @include content-center;
+    padding-top: 3%;
+    .title {
+      @include main;
+      font-size: 36px;
+      font-weight: bold;
+      color: $color-brown;
+    }
+    .content {
+      padding-top: 3%;
+      table {
+        @include inter;
+        width: 100%;
+        border-collapse: collapse;
+        border: 2px solid $color-border-table;
+        // border: 1px solid red;
+      }
+      th {
+        background-color: $color-bg-thead;
+        border: 2px solid $color-border-table;
+        font-weight: bold;
+        text-align: center;
+        padding: 20px;
+      }
+      td {
+        border: 2px solid $color-border-table;
+        text-align: center;
+        padding: 10px;
+        .confirmButton {
+          @include directionX;
+          margin: 0% 5%;
+          gap: 10px;
+          color: $color-white;
+          .buttonCancel {
+            width: 60%;
+            padding: 3px;
+            background-color: $color-lt-pink;
+            border-radius: 5px;
+          }
+          .buttonApprove {
+            width: 60%;
+            padding: 3px;
+            background-color: $color-light-green;
+            border-radius: 5px;
+          }
+        }
+        .statuss {
+          .waiting {
+            color: $color-orange;
+          }
+        }
+        .success {
+          color: $color-brown;
+        }
+        .otw {
+          color: $color-lt-blue;
+        }
+        .cancel {
+          color: $color-pink-bold;
+        }
+        .return {
+          width: 15%;
+        }
+      }
+    }
+  }
+}

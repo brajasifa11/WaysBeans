@@ -1,0 +1,135 @@
+@import '../../styles/base';
+
+.overlayX {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: $color-dark-overlay;
+}
+.popupRegister {
+  @include main;
+  position: fixed;
+  top: 10%;
+  right: 38%;
+  width: 320px;
+  height: 390px;
+  border-radius: 10px;
+  z-index: 20;
+  background-color: $color-white;
+  border: 2px solid $color-brown;
+  p {
+    font-size: 36px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 0;
+    margin-left: 38px;
+  }
+  .body {
+    .formRegister {
+    @include directionY;
+    input {
+      margin-left: 9%;
+      margin-top: 6%;
+      padding-left: 5%;
+      width: 240px;
+      height: 35px;
+      border-radius: 8px;
+      }
+    }
+  }
+}
+.btn {
+  display: flex;
+  @include content-center;
+  width: 82%;
+  height: 35px;
+  margin-top: 8%;
+  margin-bottom: 8%;
+  .btnRegister {
+    width: 100%;
+    display: flex;
+    @include content-center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    color: $color-white;
+    background-color: $color-brown;
+    cursor: pointer;
+  }
+}
+span {
+  font-size: 16px;
+  margin-left: 14%;
+  strong {
+    cursor: pointer;
+  }
+}
+
+.overlayX {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: $color-dark-overlay;
+}
+.popupLogin {
+  @include main;
+  position: fixed;
+  top: 10%;
+  right: 38%;
+  width: 320px;
+  height: 340px;
+  border-radius: 10px;
+  z-index: 20;
+  background-color: $color-white;
+  border: 2px solid $color-brown;
+  p {
+    font-size: 36px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 0;
+    margin-left: 38px;
+  }
+  .body {
+    .formLogin {
+    @include directionY;
+    input {
+      margin-left: 9%;
+      margin-top: 4%;
+      padding-left: 5%;
+      width: 240px;
+      height: 35px;
+      border-radius: 8px;
+      }
+    }
+  }
+}
+.btn {
+  display: flex;
+  @include content-center;
+  width: 82%;
+  height: 35px;
+  margin-top: 8%;
+  margin-bottom: 8%;
+  .btnRegister {
+    width: 100%;
+    display: flex;
+    @include content-center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    color: $color-white;
+    background-color: $color-brown;
+    cursor: pointer;
+  }
+}
+span {
+  font-size: 16px;
+  margin-left: 10%;
+  strong {
+    cursor: pointer;
+  }
+}

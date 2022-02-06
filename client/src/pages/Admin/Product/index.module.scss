@@ -1,0 +1,88 @@
+@import '../../../styles/base';
+
+.container {
+  .wraper {
+    margin-top: 3%;
+    .title {
+      @include main;
+      font-size: 24px;
+      font-weight: bolder;
+      color: $color-brown;
+      margin-bottom: 1%;
+      margin-left: 10%;
+    }
+    .content {
+      width: 80%;
+      @include content-center;
+      @include directionX;
+      .leftSection {
+        width: 50%;
+        .formWraper {
+          width: 80%;
+          @include directionY;
+          .input {
+            margin-bottom: 4%;
+            height: 30px;
+            border-radius: 5px;
+            border: 2px solid $color-brown;
+            padding-left: 2%;
+            background-color: $color-bg-form;
+          }
+          .input::placeholder {
+            color: $color-text-form;
+          }
+          .inputDescription {
+            background-color: $color-bg-form;
+            height: 100px;
+            border-radius: 5px;
+            border: 2px solid $color-brown;
+          }
+          .inputDescription::placeholder {
+            padding-top: 3%;
+            padding-left: 2%;
+            color: $color-text-form;
+          }
+          .photoInput {
+            width: 60%;
+            height: 40px;
+            @include directionX;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2%;
+            gap: 10px;
+            font-size: 18px;
+            background-color: $color-bg-form;
+            cursor: pointer;
+            color: $color-text-form;
+            border-radius: 5px;
+            border: 2px solid $color-brown;
+          }
+          .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 6%;
+            button {
+              @include submain;
+              width: 260px;
+              height: 40px;
+              background-color: $color-brown;
+              color: $color-white;
+              border-radius: 5px;
+              border: none;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .rightSection {
+        width: 50%;
+        img {
+          width: 286px;
+          margin-left: 5%;
+        }
+      }
+    }
+  }
+}

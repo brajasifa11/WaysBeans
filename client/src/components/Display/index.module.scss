@@ -1,0 +1,42 @@
+@import '../../styles/base';
+
+.container {
+  width: 83%;
+  @include content-center;
+  padding-top: 5%;
+  padding-bottom: 8%;
+  .wraper {
+    @include directionX;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .card {
+      @include main;
+      margin-bottom: 5%;
+      @include directionY;
+      img {
+        cursor: pointer;
+      }
+      .description {
+        padding-left: 9%;
+        text-align: left;
+        background-color: $color-bg-product;
+        .title {
+          color: $color-brown;
+          font-size: 18px;
+          margin-top: 7%;
+        }
+        .subtitle {
+          @include directionY;
+          column-gap: 5%;
+          color: $color-sub-brown;
+          font-size: 14px;
+          padding-top: 5%;
+          padding-bottom: 3%;
+          .price {
+            margin-bottom: 3%;
+          }
+        }
+      }
+    }
+  }
+}
